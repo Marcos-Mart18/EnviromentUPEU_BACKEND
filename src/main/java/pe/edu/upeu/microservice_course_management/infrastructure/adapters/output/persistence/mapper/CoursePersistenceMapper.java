@@ -6,7 +6,7 @@ import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CyclePersistenceMapper.class})
+@Mapper(componentModel = "spring", uses = {GroupPersistenceMapper.class})
 public interface CoursePersistenceMapper {
 
     CourseEntity toCourseEntity(Course course);

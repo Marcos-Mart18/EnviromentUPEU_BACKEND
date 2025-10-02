@@ -2,6 +2,7 @@ package pe.edu.upeu.microservice_course_management.infrastructure.adapters.input
 
 import lombok.*;
 import pe.edu.upeu.microservice_course_management.domain.model.Cycle;
+import pe.edu.upeu.microservice_course_management.domain.model.Group;
 
 @Builder
 @Getter
@@ -20,5 +21,5 @@ public class CourseResponse {
     private int totalHours;
     private String modality;
     private String courseType;
-    private Cycle cycle;
+    private Group group;
 }

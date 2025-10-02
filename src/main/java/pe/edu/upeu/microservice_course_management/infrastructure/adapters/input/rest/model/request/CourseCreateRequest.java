@@ -28,6 +28,6 @@ public class CourseCreateRequest {
     private String modality;
     @NotBlank(message = "Field courseType cannot be empty or null")
     private String courseType;
-    @NotNull(message = "Field IdCycle cannot be null")
-    private Long id_cycle;
+    @NotNull(message = "Field IdGroup cannot be null")
+    private Long id_group;
 }

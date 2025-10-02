@@ -9,7 +9,7 @@ import pe.edu.upeu.microservice_course_management.infrastructure.adapters.input.
 import java.util.List;
 
 @Mapper(componentModel = "spring", unmappedSourcePolicy = ReportingPolicy.IGNORE,
-uses = {CycleRestMapper.class})
+uses = {GroupRestMapper.class})
 public interface CourseRestMapper {
 
     Course toCourse(CourseCreateRequest request);

@@ -27,6 +27,6 @@ public class CourseEntity {
     private String courseType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cycle_id", nullable = false)
-    private CycleEntity cycle;
+    @JoinColumn(name = "group_id", nullable = false)
+    private GroupEntity group;
 }

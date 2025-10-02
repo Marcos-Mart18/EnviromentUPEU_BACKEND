@@ -18,6 +18,6 @@ public class Course {
     private int totalHours;
     private String modality;
     private String courseType;
-    private Cycle cycle;
+    private Group group;
 
 }
