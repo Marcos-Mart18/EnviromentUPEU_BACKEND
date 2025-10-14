@@ -2,7 +2,6 @@ package pe.edu.upeu.microservice_course_management.infrastructure.adapters.input
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.mapstruct.Mapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
