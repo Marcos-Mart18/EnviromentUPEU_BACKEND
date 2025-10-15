@@ -37,7 +37,7 @@ public class ProfessionalSchoolService implements ProfessionalSchoolServicePort 
                 .map(saveProfessionalSchool -> {
                     saveProfessionalSchool.setName(professionalSchool.getName());
                     saveProfessionalSchool.setFaculty(professionalSchool.getFaculty());
-                    return persistencePort.save(professionalSchool);
+                    return persistencePort.save(saveProfessionalSchool);
                 }).orElseThrow(ProfessionalSchoolNotFoudException::new);
     }
 

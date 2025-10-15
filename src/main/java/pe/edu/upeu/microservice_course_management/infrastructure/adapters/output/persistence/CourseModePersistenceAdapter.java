@@ -20,7 +20,7 @@ public class CourseModePersistenceAdapter implements CourseModePersistencePort {
 
 
     @Override
-    public Optional<CourseMode> findById(long id) {
+    public Optional<CourseMode> findById(Long id) {
         return repository.findById(id)
                 .map(mapper::toCourseMode);
     }

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pe.edu.upeu.microservice_course_management.domain.model.CourseAssignment;
 import pe.edu.upeu.microservice_course_management.domain.model.CourseType;
 import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.entity.*;
 import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.repository.*;
@@ -23,6 +24,8 @@ public class MicroserviceCourseManagementApplication implements CommandLineRunne
 	private final CourseModeRepository courseModeRepository;
 	private final CourseTypeRepository courseTypeRepository;
 	private final PlanRepository planRepository;
+	private final CourseAssignmentRepository courseAssignmentRepository;
+	private final TeacherRepository teacherRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MicroserviceCourseManagementApplication.class, args);
@@ -58,11 +61,14 @@ public class MicroserviceCourseManagementApplication implements CommandLineRunne
 		GroupEntity group1 = new GroupEntity(null, "1",25, cycle1);
 		group1 = groupRepository.save(group1);
 
-		List<CourseEntity> entities = Arrays.asList(
-				new CourseEntity(null,"Progrmación","202310615","20 y pasas",4,2,2,4,courseType1,courseMode1,plan1,group1)
-		);
+		CourseEntity course1 = new CourseEntity(null,"Progrmación","202310615","20 y pasas",4,2,2,4,courseType1,courseMode1,plan1,group1);
+		course1 = courseRepository.save(course1);
 
-		courseRepository.saveAll(entities);
+
+		TeacherEntity teacher1 = new TeacherEntity(null,"Abel","Falcon","abel@email.com");
+		teacher1 = teacherRepository.save(teacher1);
+
+		CourseAssignmentEntity courseAssignment1 = new CourseAssignmentEntity(null,course1,teacher1);
 
 	}
 

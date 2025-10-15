@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CourseModePersistencePort {
-    Optional<CourseMode> findById(long id);
+    Optional<CourseMode> findById(Long id);
     List<CourseMode> findAll();
     CourseMode save(CourseMode courseMode);
     void deleteById(Long id);
