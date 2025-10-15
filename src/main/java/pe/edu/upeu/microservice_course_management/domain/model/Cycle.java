@@ -10,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cycle {
-    private Long id_cycle;
+    private Long idCycle;
     private String name;
+    private ProfessionalSchool professionalSchool;
 }

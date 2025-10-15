@@ -35,7 +35,7 @@ public class GroupService implements GroupServicePort {
     public Group update(Long id, Group group) {
         return persistencePort.findById(id)
                 .map(saveGroup -> {
-                    saveGroup.setGroup_number(group.getGroup_number());
+                    saveGroup.setGroupNumber(group.getGroupNumber());
                     saveGroup.setCapacity(group.getCapacity());
                     saveGroup.setCycle(group.getCycle());
                     return persistencePort.save(saveGroup);

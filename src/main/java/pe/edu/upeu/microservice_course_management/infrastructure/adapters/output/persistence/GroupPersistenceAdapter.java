@@ -30,7 +30,9 @@ public class GroupPersistenceAdapter implements GroupPersistencePort {
 
     @Override
     public Group save(Group group) {
-        return mapper.toGroup(repository.save(mapper.toGroupEntity(group)));
+        var entity = mapper.toGroupEntity(group);
+        var savedEntity = repository.save(entity);
+        return mapper.toGroup(savedEntity);
     }
 
     @Override

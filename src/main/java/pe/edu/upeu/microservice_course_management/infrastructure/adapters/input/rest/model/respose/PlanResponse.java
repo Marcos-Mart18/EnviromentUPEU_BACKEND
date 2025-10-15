@@ -9,6 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 public class PlanResponse {
 
-    private Long id_plan;
+    private Long idPlan;
     private String name;
 }

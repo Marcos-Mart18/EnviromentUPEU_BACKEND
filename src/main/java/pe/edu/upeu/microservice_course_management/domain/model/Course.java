@@ -8,16 +8,17 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course {
-    private Long id;
+    private Long idCourse;
     private String name;
     private String code;
     private String description;
     private int duration;
+    private int creditValue;
     private int theoreticalHours;
     private int practicalHours;
-    private int totalHours;
-    private String modality;
-    private String courseType;
+    private CourseType courseType;
+    private CourseMode courseMode;
+    private Plan plan;
     private Group group;
 
 }

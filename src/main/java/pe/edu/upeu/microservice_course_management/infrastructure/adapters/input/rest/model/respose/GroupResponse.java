@@ -9,8 +9,8 @@ import pe.edu.upeu.microservice_course_management.domain.model.Cycle;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GroupResponse {
-    private Long id_group;
-    private String group_number;
+    private Long idGroup;
+    private String groupNumber;
     private int capacity;
     private Cycle cycle;
 }

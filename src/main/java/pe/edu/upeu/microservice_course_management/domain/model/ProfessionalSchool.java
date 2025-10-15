@@ -10,4 +10,5 @@ import lombok.*;
 public class ProfessionalSchool {
     private Long idProfessionalSchool;
     private String name;
+    private Faculty faculty;
 }

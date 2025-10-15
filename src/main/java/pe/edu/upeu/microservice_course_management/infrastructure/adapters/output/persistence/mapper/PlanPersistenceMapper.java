@@ -6,7 +6,7 @@ import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output
 
 import java.util.List;
 
-@Mapper(componentModel = "string")
+@Mapper(componentModel = "spring")
 public interface PlanPersistenceMapper {
     PlanEntity toPlanEntity(Plan plan);
     Plan toPlan(PlanEntity entity);

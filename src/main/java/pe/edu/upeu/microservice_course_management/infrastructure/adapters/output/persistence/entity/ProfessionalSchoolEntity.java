@@ -19,4 +19,8 @@ public class ProfessionalSchoolEntity {
     private Long idProfessionalSchool;
     @Column(name = "name")
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_faculty")
+    private FacultyEntity faculty;
 }

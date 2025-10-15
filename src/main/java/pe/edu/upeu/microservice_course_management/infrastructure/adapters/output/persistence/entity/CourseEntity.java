@@ -15,18 +15,36 @@ import lombok.Setter;
 public class CourseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_course")
+    private Long idCourse;
+    @Column(name = "name")
     private String name;
+    @Column(name = "code")
     private String code;
+    @Column(name = "description")
     private String description;
+    @Column(name = "duration")
     private int duration;
+    @Column(name = "credit_value")
+    private int creditValue;
+    @Column(name = "theoretical_hours")
     private int theoreticalHours;
+    @Column(name = "practical_hours")
     private int practicalHours;
-    private int totalHours;
-    private String modality;
-    private String courseType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "group_id", nullable = false)
+    @JoinColumn(name = "id_course_type", nullable = false)
+    private CourseTypeEntity courseType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_course_mode", nullable = false)
+    private CourseModeEntity courseMode;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_plan", nullable = false)
+    private PlanEntity plan;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_group", nullable = false)
     private GroupEntity group;
 }

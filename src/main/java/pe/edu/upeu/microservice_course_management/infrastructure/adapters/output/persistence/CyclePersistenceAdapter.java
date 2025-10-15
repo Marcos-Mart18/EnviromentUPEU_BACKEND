@@ -30,7 +30,9 @@ public class CyclePersistenceAdapter implements CyclePersistencePort {
 
     @Override
     public Cycle save(Cycle cycle) {
-        return mapper.toCycle(repository.save(mapper.toCycleEntity(cycle)));
+        var entity = mapper.toCycleEntity(cycle);
+        var savedEntity = repository.save(entity);
+        return mapper.toCycle(savedEntity);
     }
 
     @Override

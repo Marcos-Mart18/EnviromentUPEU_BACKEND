@@ -1,15 +1,15 @@
 package pe.edu.upeu.microservice_course_management.infrastructure.adapters.input.rest.model.respose;
 
 import lombok.*;
-import pe.edu.upeu.microservice_course_management.domain.model.Faculty;
 
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProfessionalSchoolResponse {
-    private Long idProfessionalSchool;
+public class TeacherResponse {
+    private Long idTeacher;
     private String name;
-    private Faculty faculty;
+    private String lastName;
+    private String email;
 }

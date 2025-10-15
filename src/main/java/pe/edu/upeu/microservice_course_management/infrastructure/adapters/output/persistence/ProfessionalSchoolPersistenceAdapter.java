@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import pe.edu.upeu.microservice_course_management.application.ports.output.ProfessionalSchoolPersistencePort;
 import pe.edu.upeu.microservice_course_management.domain.model.ProfessionalSchool;
 import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.mapper.ProfessionalSchoolPersistenceMapper;
+import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.repository.CycleRepository;
+import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.repository.FacultyRepository;
 import pe.edu.upeu.microservice_course_management.infrastructure.adapters.output.persistence.repository.ProfessionalSchoolRepository;
 
 import java.util.List;
@@ -16,6 +18,7 @@ public class ProfessionalSchoolPersistenceAdapter implements ProfessionalSchoolP
 
     private final ProfessionalSchoolRepository repository;
     private final ProfessionalSchoolPersistenceMapper mapper;
+    private final FacultyRepository facultyRepository;
 
     @Override
     public Optional<ProfessionalSchool> findById(long id) {
@@ -30,7 +33,9 @@ public class ProfessionalSchoolPersistenceAdapter implements ProfessionalSchoolP
 
     @Override
     public ProfessionalSchool save(ProfessionalSchool professionalSchool) {
-        return mapper.toProfessionalSchool(repository.save(mapper.toProfessionalSchoolEntity(professionalSchool)));
+        var entity = mapper.toProfessionalSchoolEntity(professionalSchool);
+        var savedEntity = repository.save(entity);
+        return mapper.toProfessionalSchool(savedEntity);
     }
 
     @Override

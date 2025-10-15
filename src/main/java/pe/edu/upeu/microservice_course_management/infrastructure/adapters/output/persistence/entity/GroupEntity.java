@@ -15,8 +15,11 @@ import lombok.Setter;
 public class GroupEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_group;
-    private String group_number;
+    @Column(name = "id_group")
+    private Long idGroup;
+    @Column(name = "group_number")
+    private String groupNumber;
+    @Column(name = "capacity")
     private int capacity;
 
     @ManyToOne(fetch = FetchType.LAZY)

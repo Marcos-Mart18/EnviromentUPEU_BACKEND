@@ -6,24 +6,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "cycles")
-public class CycleEntity {
-
+@Table(name = "course_mode")
+public class CourseModeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cycle")
-    private Long idCycle;
+    @Column(name = "id_course_mode")
+    private Long idCourseMode;
+
     @Column(name = "name")
     private String name;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_professional_school")
-    private ProfessionalSchoolEntity professionalSchool;
 }

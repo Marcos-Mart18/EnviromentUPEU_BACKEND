@@ -8,8 +8,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Group {
-    private Long id_group;
-    private String group_number;
+    private Long idGroup;
+    private String groupNumber;
     private int capacity;
     private Cycle cycle;
 }

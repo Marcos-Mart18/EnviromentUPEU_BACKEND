@@ -15,6 +15,8 @@ import lombok.Setter;
 public class PlanEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_plan;
+    @Column(name = "id_plan")
+    private Long idPlan;
+    @Column(name = "name")
     private String name;
 }

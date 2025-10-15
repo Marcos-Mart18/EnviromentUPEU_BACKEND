@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Plan {
-    private Long idPlan;
+public class CourseMode {
+    private Long idCourseMode;
     private String name;
 }

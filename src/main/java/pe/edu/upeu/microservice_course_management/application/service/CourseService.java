@@ -38,10 +38,9 @@ public class CourseService implements CourseServicePort {
                     saveCourse.setCode(course.getCode());
                     saveCourse.setDescription(course.getDescription());
                     saveCourse.setDuration(course.getDuration());
+                    saveCourse.setCreditValue(course.getCreditValue());
                     saveCourse.setTheoreticalHours(course.getTheoreticalHours());
                     saveCourse.setPracticalHours(course.getPracticalHours());
-                    saveCourse.setTotalHours(course.getTotalHours());
-                    saveCourse.setModality(course.getModality());
                     saveCourse.setCourseType(course.getCourseType());
                     return persistencePort.save(saveCourse);
                 }).orElseThrow(CourseNotFoundException::new);
